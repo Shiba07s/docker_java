@@ -18,7 +18,7 @@ pipeline {
         stage("build code"){
             steps {
                 echo "build image"
-                sh "docker build -t student-app-docker.jar ."
+                sh "docker build -t sars-app-docker.jar ."
             }
             
         }
@@ -26,9 +26,9 @@ pipeline {
             steps {
                  echo "Pushing the image to docker hub"
                 withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker tag student-app-docker.jar ${env.dockerHubUser}/student-app-docker.jar:latest"
+                sh "docker tag sars-app-docker.jar ${env.dockerHubUser}/sars-app-docker.jar:latest"
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                sh "docker push ${env.dockerHubUser}/student-app-docker.jar:latest"
+                sh "docker push ${env.dockerHubUser}/sars-app-docker.jar:latest"
                 }
                  
             }
