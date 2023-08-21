@@ -1,4 +1,4 @@
 FROM openjdk:11-jre-slim
 EXPOSE 9091
-ADD target/student-app-docker.jar student-app-docker.jar
-ENTRYPOINT [ "java","-jar","/student-app-docker.jar" ]
+ADD target/sars-app-docker.jar sars-app-docker.jar
+ENTRYPOINT [ "java","-jar","/sars-app-docker.jar" ]
