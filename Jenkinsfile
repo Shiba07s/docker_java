@@ -38,7 +38,7 @@ pipeline {
             steps {
                 echo "deploy"
                 //sh "docker-compose down && docker-compose up -d"
-                docker run -p 9091:8080 sars-app-docker.jar:latest
+               sh "docker run -p 9091:8080 sars-app-docker.jar:latest"
             }
             
         }
