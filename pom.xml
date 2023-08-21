@@ -68,7 +68,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>student-app-docker</finalName>
+		<finalName>sars-app-docker</finalName>
 	</build>
 
 </project>
