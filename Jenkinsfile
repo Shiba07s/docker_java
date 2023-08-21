@@ -9,6 +9,12 @@ pipeline {
             }
             
         }
+        stage ('Build'){
+            steps{
+                echo "successfully creating jar file"
+                sh 'mvn clean package'
+            }
+        }
         stage("build code"){
             steps {
                 echo "build image"
