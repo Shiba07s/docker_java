@@ -1,6 +1,6 @@
 version : "3.3"
 services :
   web :
-     image : shiba07s/student-app-docker.jar:latest
+     image : shiba07s/sars-app-docker.jar:latest
      ports :
          - "9091:9091"
