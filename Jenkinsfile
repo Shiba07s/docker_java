@@ -18,7 +18,7 @@ pipeline {
         stage("build code"){
             steps {
                 echo "build image"
-                sh "docker build -t sars-app-docker.jar ."
+                sh "docker build -t ashu-app-docker.jar ."
             }
             
         }
@@ -26,9 +26,9 @@ pipeline {
             steps {
                  echo "Pushing the image to docker hub"
                 withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker tag sars-app-docker.jar ${env.dockerHubUser}/sars-app-docker.jar:latest"
+                sh "docker tag ashu-app-docker.jar ${env.dockerHubUser}/ashu-app-docker.jar:latest"
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                sh "docker push ${env.dockerHubUser}/sars-app-docker.jar:latest"
+                sh "docker push ${env.dockerHubUser}/ashu-app-docker.jar:latest"
                 }
                  
             }
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 echo "deploy"
                 //sh "docker-compose down && docker-compose up -d"
-               sh "docker run -p 9091:8080 sars-app-docker.jar:latest"
+               sh "docker run -p 9090:8080 ashu-app-docker.jar:latest"
             }
             
         }
