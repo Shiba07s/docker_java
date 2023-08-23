@@ -68,7 +68,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>sars-app-docker</finalName>
+		<finalName>ashu-app-docker</finalName>
 	</build>
 
 </project>
